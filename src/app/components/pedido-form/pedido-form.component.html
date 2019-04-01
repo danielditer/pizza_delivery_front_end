@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-md-4-off-md-2">
+  <div class="card">
+    <div class="card-body">
+      <form action="">
+        <div class="from-group">
+        <!--  <input type="text" name="customerName" [(ngModel)]="pedido.customerName" class="form-control" autofocus>   -->
+          <input type="text" name="customerName" [(ngModel)]="pedido.customerName" placeholder="customerName" class="form-control" autofocus>      
+
+        </div>
+        <div class="from-group">
+            <input type="text" name="status" [(ngModel)]="pedido.status"  class="form-control">         
+  
+          </div>
+          <div class="from-group">
+            <input type="text" name="userId" [(ngModel)]="pedido.userId" class="form-control">       
+    
+           </div>
+          <button class="btn btn-sucess btn-block" (click)="updatePedido()">
+              Guardar como entregado
+            </button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
