@@ -1,0 +1,20 @@
+<h2>
+    Lista de pedidos
+</h2>
+
+<div class="col-md-4" *ngFor="let pedido of pedidos">
+
+  <div class="card text-center">
+    <div class="card-header align-items-center">
+      {{pedido.id}}
+    </div>
+    <div class="card-body">
+      <p>
+          {{pedido.customerName}}
+      </p>
+      <a [routerLink]="['/pedidos/edit', pedido.id]" class="btn btn-info btn-block">
+        Edit Pedido
+      </a>   
+    </div>
+  </div>
+</div>
