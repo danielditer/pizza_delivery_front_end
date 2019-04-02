@@ -31,8 +31,18 @@ export class PedidoFormComponent implements OnInit {
       err =>console.error(err)
     )
   }
+  cambiarEstado(){
+    if (this.pedido.status==1){
+      this.pedido.status=2;
+    }
+    else{
+      this.pedido.status=1;
+    }
+  }
   updatePedido(){
-    this.pedido.status=2;
+   // this.pedido.status=2;
+  //   console.log(this.pedido);
+
      this.pedidoService.updatePedido(this.pedido.id,this.pedido)
       .subscribe(
         res=>{

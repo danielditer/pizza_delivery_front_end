@@ -5,20 +5,33 @@
       <form action="">
         <div class="from-group">
         <!--  <input type="text" name="customerName" [(ngModel)]="pedido.customerName" class="form-control" autofocus>   -->
-          <input type="text" name="customerName" [(ngModel)]="pedido.customerName" placeholder="customerName" class="form-control" autofocus>      
+       <p>Cliente:</p>
+          <input type="text" name="customerName" [(ngModel)]="pedido.customerName" placeholder="customerName" class="form-control">      
 
-        </div>
-        <div class="from-group">
-            <input type="text" name="status" [(ngModel)]="pedido.status"  class="form-control">         
-  
+        </div><br>
+        <div class="from-Detail">
+            <p>Detalle:</p><br>
+            <div class="detail">
+                        
+                <p>producto:pizza 1</p>
+                <p>Precio 10.5</p>
+            <div class="col-md-4" [(ngModel)]="pedido.lineas" *ngFor="let linea of lineas">
+                <div class="card-body">     
+                    <p> Producto:
+                        {{linea.product}}
+                    </p>
+                  </div>                      
+                  <input type="text" [(ngModel)]="pedido.lineas">                                   
+          </div> <br>
           </div>
-          <div class="from-group">
-            <input type="text" name="userId" [(ngModel)]="pedido.userId" class="form-control">       
-    
-           </div>
-          <button class="btn btn-sucess btn-block" (click)="updatePedido()">
-              Guardar como entregado
-            </button>
+          <div class="custom-control custom-checkbox">
+              <input type="checkbox" [checked]="pedido.status ===2" (click)="cambiarEstado()" class="custom-control-input" id="customCheck1" autofocus>
+              <label class="custom-control-label" for="customCheck1">Marcar como entregado</label>
+            </div>
+          </div>  <br>
+          <button class="btn btn-sucess btn-block btn-info" (click)="updatePedido()">
+              Guardar
+          </button>
       </form>
     </div>
   </div>
